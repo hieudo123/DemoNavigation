@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/bg_mainscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <include layout="@layout/actionbar_back"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             android:id="@+id/actionbar_back"
+             android:layout_height="@dimen/height_toolbar"
+             android:layout_width="match_parent"></include>
+    <Button
+            android:textColor="@color/text_white"
+            android:background="@drawable/selector_start_button_v2"
+            android:text="@string/create_player"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_createPlayer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/w30"
+            android:layout_marginStart="@dimen/w30"
+            android:layout_marginTop="@dimen/w30"
+            app:layout_constraintTop_toBottomOf="@+id/et_name"/>
+    <com.github.ybq.android.spinkit.SpinKitView
+            app:SpinKit_Color="@color/btn_start_game"
+            android:id="@+id/spin_kit"
+            android:visibility="gone"
+            style="@style/SpinKitView.WanderingCubes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="453dp"
+            tools:layout_editor_absoluteX="168dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/w30"
+            app:layout_constraintTop_toBottomOf="@+id/et_name"/>
+    <EditText
+            android:paddingBottom="@dimen/w20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/et_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/w30"
+            android:layout_marginStart="@dimen/w30"
+            android:hint="Username"
+            android:layout_marginBottom="@dimen/w10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/w10"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar_back"/>
+    <TextView
+            android:textColor="@color/btn_start_game"
+            android:gravity="center"
+            android:text="@string/create_player_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_title_page" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.487" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar_back"
+            app:layout_constraintBottom_toTopOf="@+id/et_name" android:textSize="@dimen/w40" android:textStyle="bold"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp"
+            app:layout_constraintVertical_bias="0.19999999"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_male"
+            android:id="@+id/iv_icon_male"
+            android:layout_marginBottom="@dimen/w10"
+            app:layout_constraintBottom_toTopOf="@+id/et_name" android:layout_marginTop="@dimen/w10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_page"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_page" android:layout_marginStart="@dimen/w30"
+            app:layout_constraintVertical_bias="0.0"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_female"
+            android:id="@+id/iv_icon_female" android:layout_marginTop="@dimen/w10"
+            android:layout_marginBottom="@dimen/w10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_page"
+            app:layout_constraintBottom_toTopOf="@+id/et_name" app:layout_constraintEnd_toEndOf="@+id/tv_title_page"
+            android:layout_marginEnd="@dimen/w30" app:layout_constraintVertical_bias="0.0"
+    />
+    <TextView
+            android:textSize="@dimen/w16"
+            android:textColor="@color/btn_start_game"
+            android:text="@string/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_male" app:layout_constraintEnd_toEndOf="@+id/iv_icon_male"
+            app:layout_constraintStart_toStartOf="@+id/iv_icon_male"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon_male"/>
+    <TextView
+            android:visibility="gone"
+            android:textColor="@color/btn_start_game"
+            android:textSize="@dimen/w16"
+            android:text="@string/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_female" app:layout_constraintEnd_toEndOf="@+id/iv_icon_female"
+            app:layout_constraintStart_toStartOf="@+id/iv_icon_female"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon_female"
+            app:layout_constraintHorizontal_bias="0.511"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

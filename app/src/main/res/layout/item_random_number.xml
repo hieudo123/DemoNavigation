@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:background="@drawable/selector_start_button_v2"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="@dimen/w100"
+        android:layout_height="@dimen/w150">
+    <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/w20"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/tv_result"
+            android:textSize="@dimen/w50"
+            android:textColor="@color/text_white"/>
+</FrameLayout>

@@ -37,4 +37,14 @@ dependencies {
     def nav_dep = "2.1.0-beta02"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_dep"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_dep"
+    //Retrofi2
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    // JSON Parsing
+    implementation 'com.google.code.gson:gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //spinkit
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    //CircleImage
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 }

@@ -1,28 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/bg_mainscreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainFragment">
-    <!-- TODO: Update blank fragment layout -->
-
-
-    <Button
-            android:text=" GO TO ACCOUNT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnGoToAccount"
+        tools:context=".fragments.MainFragment">
+    <include layout="@layout/actionbar_back"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/height_toolbar"
+             android:id="@+id/action_bar_back"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/ic_male"
+            android:layout_width="@dimen/w100"
+            android:layout_height="@dimen/w100"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@+id/btnGoToSettings"
-            app:layout_constraintVertical_chainStyle="packed"/>
-    <Button
-            android:text="GO TO SETTINGS"
+            android:layout_marginStart="@dimen/w15"
+            android:id="@+id/circleImage_user"
+            android:layout_marginTop="@dimen/w10"
+            app:layout_constraintTop_toBottomOf="@+id/action_bar_back"/>
+    <TextView
+            android:text="@string/app_name"
+            android:textColor="@color/btn_start_game"
+            android:textSize="@dimen/w20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGoToSettings"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnGoToAccount"/>
+            android:id="@+id/tv_username"
+            app:layout_constraintStart_toEndOf="@+id/circleImage_user"
+            android:layout_marginStart="@dimen/w30"
+            app:layout_constraintTop_toBottomOf="@+id/action_bar_back" android:layout_marginTop="@dimen/w10"/>
+    <TextView
+            android:textColor="@color/point_color"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/w30"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_yourCoin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username"
+            app:layout_constraintStart_toEndOf="@+id/circleImage_user"
+            android:layout_marginStart="@dimen/w10"
+            app:layout_constraintEnd_toEndOf="@+id/tv_username"
+            android:layout_marginTop="@dimen/w10"
+            app:layout_constraintHorizontal_bias="0.119"/>
+    <ImageView
+            android:src="@drawable/ic_coint"
+            android:layout_width="@dimen/w30"
+            android:layout_height="@dimen/w30"
+            android:id="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_yourCoin"
+            app:layout_constraintEnd_toEndOf="@+id/tv_username"
+            android:layout_marginEnd="@dimen/w10"
+            android:layout_marginTop="@dimen/w10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username"/>
+    <!--<Button-->
+            <!--android:drawableLeft="@drawable/single_player"-->
+            <!--android:textColor="@color/text_white"-->
+            <!--android:background="@drawable/selector_start_button_v2"-->
+            <!--android:textSize="@dimen/w20"-->
+            <!--android:padding="@dimen/w20"-->
+            <!--android:text="@string/single_play"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/btn_singlePlayer"-->
+            <!--android:layout_marginStart="@dimen/w20"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--android:layout_marginTop="@dimen/w20"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/circleImage_user" android:layout_marginEnd="@dimen/w20"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"/>-->
+    <!--<Button-->
+            <!--android:drawableLeft="@drawable/multi_player"-->
+            <!--android:textColor="@color/text_white"-->
+            <!--android:background="@drawable/selector_start_button_v2"-->
+            <!--android:textSize="@dimen/w20"-->
+            <!--android:padding="@dimen/w20"-->
+            <!--android:text="@string/multi_play"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/btn_multiPlayer"-->
+            <!--android:layout_marginStart="@dimen/w20"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--android:layout_marginTop="@dimen/w20"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/btn_singlePlayer"-->
+            <!--android:layout_marginEnd="@dimen/w20"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.0"/>-->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_menuList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/w20"
+            app:layout_constraintTop_toBottomOf="@+id/circleImage_user" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/w15" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/w15">
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
