@@ -44,10 +44,12 @@ abstract class BaseActivity : AppCompatActivity() {
         if(vBack != null)
             vBack.setOnClickListener(onBackClick)
     }
+
     val onBackClick : View.OnClickListener =View.OnClickListener { onBackPressed() }
     override fun onBackPressed() {
         super.onBackPressed()
     }
+
     fun getCurrentUser():UserModel{
        return  (application as BaseApplication).getUser()
     }

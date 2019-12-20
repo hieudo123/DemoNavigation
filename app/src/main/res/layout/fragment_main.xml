@@ -2,96 +2,74 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:background="@color/bg_mainscreen"
+        android:background="@color/text_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragments.MainFragment">
+    
     <include layout="@layout/actionbar_back"
              android:layout_width="match_parent"
              android:layout_height="@dimen/height_toolbar"
              android:id="@+id/action_bar_back"/>
+    
     <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@drawable/ic_male"
             android:layout_width="@dimen/w100"
             android:layout_height="@dimen/w100"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/w15"
-            android:id="@+id/circleImage_user"
+            android:id="@+id/fragMain_ivUserImage"
             android:layout_marginTop="@dimen/w10"
             app:layout_constraintTop_toBottomOf="@+id/action_bar_back"/>
+
     <TextView
             android:text="@string/app_name"
             android:textColor="@color/btn_start_game"
             android:textSize="@dimen/w20"
+            android:layout_marginStart="@dimen/w10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_username"
-            app:layout_constraintStart_toEndOf="@+id/circleImage_user"
-            android:layout_marginStart="@dimen/w30"
-            app:layout_constraintTop_toBottomOf="@+id/action_bar_back" android:layout_marginTop="@dimen/w10"/>
+            android:id="@+id/fragMain_tvUsername"
+            app:layout_constraintStart_toEndOf="@+id/fragMain_ivUserImage"
+            app:layout_constraintTop_toTopOf="@+id/fragMain_ivUserImage"
+            android:layout_marginTop="@dimen/w10"/>
+
     <TextView
             android:textColor="@color/point_color"
             android:inputType="numberDecimal"
-            android:textSize="@dimen/w30"
-            android:text="0"
-            android:layout_width="wrap_content"
+            android:textSize="30sp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_yourCoin"
-            app:layout_constraintTop_toBottomOf="@+id/tv_username"
-            app:layout_constraintStart_toEndOf="@+id/circleImage_user"
+            android:layout_marginEnd="@dimen/w15"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:layout_marginStart="@dimen/w10"
-            app:layout_constraintEnd_toEndOf="@+id/tv_username"
-            android:layout_marginTop="@dimen/w10"
-            app:layout_constraintHorizontal_bias="0.119"/>
+            android:id="@+id/fragMain_tvUserCoin"
+            app:layout_constraintTop_toTopOf="@id/fragMain_ivCoin"
+            app:layout_constraintBottom_toBottomOf="@id/fragMain_ivCoin"
+            app:layout_constraintStart_toEndOf="@id/fragMain_ivCoin"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/w10" />
+
     <ImageView
             android:src="@drawable/ic_coint"
             android:layout_width="@dimen/w30"
             android:layout_height="@dimen/w30"
-            android:id="@+id/imageView2"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_yourCoin"
-            app:layout_constraintEnd_toEndOf="@+id/tv_username"
+            android:id="@+id/fragMain_ivCoin"
+            app:layout_constraintTop_toBottomOf="@+id/fragMain_tvUsername"
+            app:layout_constraintStart_toStartOf="@id/fragMain_tvUsername"
             android:layout_marginEnd="@dimen/w10"
-            android:layout_marginTop="@dimen/w10"
-            app:layout_constraintTop_toBottomOf="@+id/tv_username"/>
-    <!--<Button-->
-            <!--android:drawableLeft="@drawable/single_player"-->
-            <!--android:textColor="@color/text_white"-->
-            <!--android:background="@drawable/selector_start_button_v2"-->
-            <!--android:textSize="@dimen/w20"-->
-            <!--android:padding="@dimen/w20"-->
-            <!--android:text="@string/single_play"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/btn_singlePlayer"-->
-            <!--android:layout_marginStart="@dimen/w20"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--android:layout_marginTop="@dimen/w20"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/circleImage_user" android:layout_marginEnd="@dimen/w20"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"/>-->
-    <!--<Button-->
-            <!--android:drawableLeft="@drawable/multi_player"-->
-            <!--android:textColor="@color/text_white"-->
-            <!--android:background="@drawable/selector_start_button_v2"-->
-            <!--android:textSize="@dimen/w20"-->
-            <!--android:padding="@dimen/w20"-->
-            <!--android:text="@string/multi_play"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/btn_multiPlayer"-->
-            <!--android:layout_marginStart="@dimen/w20"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--android:layout_marginTop="@dimen/w20"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/btn_singlePlayer"-->
-            <!--android:layout_marginEnd="@dimen/w20"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintHorizontal_bias="0.0"/>-->
+            android:layout_marginTop="@dimen/w10" />
+
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_menuList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/w20"
-            app:layout_constraintTop_toBottomOf="@+id/circleImage_user" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragMain_ivUserImage"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/w15" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/w15">
     </androidx.recyclerview.widget.RecyclerView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

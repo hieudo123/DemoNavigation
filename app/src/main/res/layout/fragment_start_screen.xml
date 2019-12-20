@@ -48,7 +48,7 @@
             android:elevation="@dimen/w100"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/diamod_question"
+            app:srcCompat="@drawable/question_logo"
             android:id="@+id/iv_logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

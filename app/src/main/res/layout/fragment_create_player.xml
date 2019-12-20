@@ -3,9 +3,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:background="@color/bg_mainscreen"
+        android:background="@color/text_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     <include layout="@layout/actionbar_back"
              app:layout_constraintTop_toTopOf="parent"
              app:layout_constraintEnd_toEndOf="parent"
@@ -13,6 +14,7 @@
              android:id="@+id/actionbar_back"
              android:layout_height="@dimen/height_toolbar"
              android:layout_width="match_parent"></include>
+
     <Button
             android:textColor="@color/text_white"
             android:background="@drawable/selector_start_button_v2"
@@ -27,6 +29,7 @@
             android:layout_marginStart="@dimen/w30"
             android:layout_marginTop="@dimen/w30"
             app:layout_constraintTop_toBottomOf="@+id/et_name"/>
+
     <com.github.ybq.android.spinkit.SpinKitView
             app:SpinKit_Color="@color/btn_start_game"
             android:id="@+id/spin_kit"
@@ -42,6 +45,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="@dimen/w30"
             app:layout_constraintTop_toBottomOf="@+id/et_name"/>
+
     <EditText
             android:paddingBottom="@dimen/w20"
             android:layout_width="0dp"
@@ -59,6 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="@dimen/w10"
             app:layout_constraintTop_toBottomOf="@+id/actionbar_back"/>
+
     <TextView
             android:textColor="@color/btn_start_game"
             android:gravity="center"
@@ -71,6 +76,7 @@
             app:layout_constraintBottom_toTopOf="@+id/et_name" android:textSize="@dimen/w40" android:textStyle="bold"
             android:layout_marginStart="32dp" android:layout_marginEnd="32dp"
             app:layout_constraintVertical_bias="0.19999999"/>
+
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_male"
@@ -80,6 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title_page"
             app:layout_constraintStart_toStartOf="@+id/tv_title_page" android:layout_marginStart="@dimen/w30"
             app:layout_constraintVertical_bias="0.0"/>
+
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_female"
@@ -89,6 +96,7 @@
             app:layout_constraintBottom_toTopOf="@+id/et_name" app:layout_constraintEnd_toEndOf="@+id/tv_title_page"
             android:layout_marginEnd="@dimen/w30" app:layout_constraintVertical_bias="0.0"
     />
+
     <TextView
             android:textSize="@dimen/w16"
             android:textColor="@color/btn_start_game"
@@ -99,6 +107,7 @@
             app:layout_constraintStart_toStartOf="@+id/iv_icon_male"
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintTop_toBottomOf="@+id/iv_icon_male"/>
+
     <TextView
             android:visibility="gone"
             android:textColor="@color/btn_start_game"
@@ -110,4 +119,5 @@
             app:layout_constraintStart_toStartOf="@+id/iv_icon_female"
             app:layout_constraintTop_toBottomOf="@+id/iv_icon_female"
             app:layout_constraintHorizontal_bias="0.511"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

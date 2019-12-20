@@ -19,4 +19,5 @@ class UserModel(
     var image : Int = 0
 ):Serializable {
 
+
 }

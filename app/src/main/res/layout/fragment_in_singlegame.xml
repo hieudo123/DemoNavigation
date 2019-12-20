@@ -2,72 +2,83 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@color/bg_mainscreen"
+        android:background="@color/text_white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <include layout="@layout/actionbar_back"
+            android:id="@+id/actionBar"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@drawable/ic_male"
             android:layout_width="@dimen/w100"
             android:layout_height="@dimen/w100"
-            android:id="@+id/circleImage_user"
+            android:id="@+id/fragSingleGame_ivUserImage"
             android:layout_marginBottom="@dimen/w10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/w10"/>
+
     <TextView
             android:lines="1"
             android:textColor="@color/point_color"
-            android:id="@+id/tv_userCoin"
+            android:id="@+id/fragSingleGame_tvUserCoin"
             android:inputType="numberDecimal"
             android:textSize="@dimen/w40"
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/circleImage_user"
-            app:layout_constraintStart_toEndOf="@+id/circleImage_user"
+            app:layout_constraintTop_toTopOf="@+id/fragSingleGame_ivUserImage"
+            app:layout_constraintStart_toEndOf="@+id/fragSingleGame_ivUserImage"
             android:layout_marginStart="@dimen/w10"/>
+
     <ImageView
             android:src="@drawable/ic_coint"
             android:layout_width="@dimen/w30"
             android:layout_height="@dimen/w30"
             android:id="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/tv_userCoin"
+            app:layout_constraintStart_toEndOf="@+id/fragSingleGame_tvUserCoin"
             android:layout_marginStart="@dimen/w10"
-            app:layout_constraintTop_toTopOf="@+id/tv_userCoin"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_userCoin"/>
+            app:layout_constraintTop_toTopOf="@+id/fragSingleGame_tvUserCoin"
+            app:layout_constraintBottom_toBottomOf="@+id/fragSingleGame_tvUserCoin"/>
+
     <Button
             android:background="@drawable/selector_start_button_v2"
             android:padding="@dimen/w20"
             android:text="@string/small"
             android:layout_width="@dimen/w100"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_small"
+            android:id="@+id/fragSingleGame_btnSmall"
             android:layout_marginBottom="@dimen/w10"
-            app:layout_constraintBottom_toTopOf="@+id/circleImage_user"
+            app:layout_constraintBottom_toTopOf="@+id/fragSingleGame_ivUserImage"
             android:layout_marginStart="@dimen/w10" app:layout_constraintStart_toStartOf="parent"/>
+
     <Button
             android:background="@drawable/selector_start_button_v2"
             android:padding="@dimen/w20"
             android:text="@string/larger"
             android:layout_width="@dimen/w100"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_larger" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/w10"
-            android:layout_marginBottom="@dimen/w10" app:layout_constraintBottom_toTopOf="@+id/circleImage_user"/>
+            android:id="@+id/fragSingleGame_btnLarger"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/w10"
+            android:layout_marginBottom="@dimen/w10"
+            app:layout_constraintBottom_toTopOf="@+id/fragSingleGame_ivUserImage"/>
+
     <TextView
             android:gravity="center"
             android:padding="@dimen/w20"
             android:background="@drawable/selector_start_button_v2"
             android:layout_width="@dimen/w150"
             android:layout_height="@dimen/w200"
-            android:id="@+id/tv_result"
+            android:id="@+id/fragSingleGame_tvResult"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/btn_small"
+            app:layout_constraintTop_toBottomOf="@+id/actionBar"
+            app:layout_constraintBottom_toTopOf="@+id/fragSingleGame_btnSmall"
             android:textSize="@dimen/w50"
             android:textColor="@color/text_white"/>
+
     <TextView
             android:visibility="gone"
             android:textColor="@color/text_white"
@@ -80,7 +91,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@+id/tv_result"
             android:layout_marginBottom="@dimen/w10"
-            app:layout_constraintBottom_toTopOf="@+id/btn_small"
+            app:layout_constraintBottom_toTopOf="@+id/fragSingleGame_btnSmall"
             android:textSize="@dimen/w40"
     />
 </androidx.constraintlayout.widget.ConstraintLayout>

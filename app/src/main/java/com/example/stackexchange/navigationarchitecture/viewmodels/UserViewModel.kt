@@ -10,15 +10,19 @@ import com.example.stackexchange.navigationarchitecture.repository.UserRepositor
 
 class UserViewModel(application: Application): AndroidViewModel(application) {
     var userLiveData = MutableLiveData<UserModel>()
-    lateinit var  userRepository : UserRepository
+    var  userRepository : UserRepository
     init {
-        userRepository = UserRepository(Activity())
-        getUser(Activity())
+        userRepository = UserRepository()
+
     }
-    fun createUser(userModel: UserModel){
-        userRepository.createUser(userModel)
+
+    fun createUser(userName:String, gender:String, coin: Int, image : Int){
+        userLiveData.value = UserModel(userName,coin,gender,image)
     }
-    fun getUser(activity: Activity){
-        userLiveData = userRepository.getUser()
+
+    fun updateUserModel(userModel: UserModel){
+        userLiveData.value = userModel
     }
+
+
 }
